@@ -1,11 +1,11 @@
 import {fromObject} from "tns-core-modules/data/observable";
 import {Page} from "tns-core-modules/ui/page";
-import {Contact} from "~/lib/Contact";
+import {Contact} from "~/lib/dynacred/Contact";
 import {topmost} from "tns-core-modules/ui/frame";
-import {createQrcode, parseQRCode, scan} from "~/lib/Scan";
-import {Data, gData} from "~/lib/Data";
-import {msgFailed} from "~/lib/ui/messages";
-import {Log} from "~/lib/Log";
+import {createQrcode, parseQRCode, scan} from "~/lib/dynacred/Scan";
+import {Data, gData} from "~/lib/dynacred/Data";
+import {msgFailed} from "~/lib/messages";
+import Log from "~/lib/cothority/log";
 
 let user: Contact;
 let context = fromObject({qrcode: null});

@@ -8,11 +8,11 @@ import {EventData, fromObject} from "tns-core-modules/data/observable";
 import {Page} from "tns-core-modules/ui/page";
 import {topmost} from "tns-core-modules/ui/frame";
 import {RecoverView} from "~/pages/identity/recover/recover-view";
-import {Contact} from "~/lib/Contact";
-import {gData} from "~/lib/Data";
+import {Contact} from "~/lib/dynacred/Contact";
+import {gData} from "~/lib/dynacred/Data";
 import * as dialogs from "tns-core-modules/ui/dialogs";
-import {msgFailed} from "~/lib/ui/messages";
-import {Log} from "~/lib/Log";
+import {msgFailed} from "~/lib/messages";
+import Log from "~/lib/cothority/log";
 import {viewScanModel} from "~/pages/lab/personhood/scan-atts/scan-atts-page";
 
 let page: Page;

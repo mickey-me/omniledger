@@ -5,12 +5,20 @@
         "emitDecoratorMetadata": true,
         "noEmitHelpers": true,
         "noEmitOnError": true,
+        "esModuleInterop": true,
+
+        "declaration": false,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "resolveJsonModule": true,
+
         "lib": [
             "es2017",
             "dom",
             "es6"
         ],
-        "baseUrl": ".",
+        "baseUrl": "./",
         "paths": {
             "~/*": [
                 "app/*"
@@ -23,6 +31,7 @@
     },
     "exclude": [
         "node_modules",
-        "platforms"
+        "platforms",
+        "cothority"
     ]
 }

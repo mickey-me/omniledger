@@ -1,12 +1,12 @@
 import {ScanAttsView} from "~/pages/lab/personhood/scan-atts/scan-atts-view";
 
 import {Page} from "tns-core-modules/ui/page";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import * as dialogs from "tns-core-modules/ui/dialogs";
-import {gData} from "~/lib/Data";
+import {gData} from "~/lib/dynacred/Data";
 import {Party} from "~/lib/Party";
-import {parseQRCode, scan} from "~/lib/Scan";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
+import {parseQRCode, scan} from "~/lib/dynacred/Scan";
+import {msgFailed, msgOK} from "~/lib/messages";
 import {topmost} from "tns-core-modules/ui/frame";
 
 export let viewScanModel: ScanAttsView;

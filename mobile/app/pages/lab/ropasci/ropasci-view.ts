@@ -1,10 +1,10 @@
 import {Observable} from "tns-core-modules/data/observable";
-import {Log} from "~/lib/Log";
-import {gData} from "~/lib/Data";
+import Log from "~/lib/cothority/log";
+import {gData} from "~/lib/dynacred/Data";
 import {GestureEventData} from "tns-core-modules/ui/gestures";
 import {fromFile, ImageSource} from "tns-core-modules/image-source";
 import {sprintf} from "sprintf-js";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
+import {msgFailed, msgOK} from "~/lib/messages";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {getFrameById, topmost} from "tns-core-modules/ui/frame";
 import {RoPaSciInstance, RoPaSciStruct} from "~/lib/cothority/byzcoin/contracts/RoPaSciInstance";

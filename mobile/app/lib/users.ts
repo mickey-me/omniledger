@@ -1,9 +1,9 @@
-import {scan} from "~/lib/Scan";
-import {Log} from "~/lib/Log";
-import {Data, gData} from "~/lib/Data";
-import {Contact} from "~/lib/Contact";
+import Long from "long";
+import {scan} from "~/lib/dynacred/Scan";
+import Log from "~/lib/cothority/log";
+import {Data, gData} from "~/lib/dynacred/Data";
+import {Contact} from "~/lib/dynacred/Contact";
 import * as dialogs from "ui/dialogs";
-import * as Long from "long";
 import {msgFailed, msgOK} from "~/lib/messages";
 
 import * as utils from "utils/utils";
@@ -29,7 +29,7 @@ export async function scanNewUser(d: Data): Promise<Contact> {
     return user;
 }
 
-export async function assertRegistered(u: Contact, setProgress: Function): Promise<boolean> {
+export async function assertRegistered(u: Contact, setProgress: (text: string, width: number) => void ): Promise<boolean> {
     if (u.isRegistered()) {
         return true;
     }
@@ -60,7 +60,7 @@ export async function assertRegistered(u: Contact, setProgress: Function): Promi
     return false;
 }
 
-export async function sendCoins(u: Contact, setProgress: Function) {
+export async function sendCoins(u: Contact, setProgress: (text: string, width: number) => void ) {
     if (await assertRegistered(u, setProgress)) {
         let reply = await dialogs.prompt({
             title: "Send coins",

@@ -6,10 +6,9 @@ logic, and to set up your page’s data binding.
 
 import {EventData, fromObject, Observable} from "tns-core-modules/data/observable";
 import {getFrameById, getViewById, Page, topmost} from "tns-core-modules/ui/frame";
-import {gData} from "~/lib/Data";
-import {Log} from "~/lib/Log";
-import {Defaults} from "~/lib/Defaults";
-import {TestStoreRPC} from "~/lib/network/TestStore";
+import {gData} from "~/lib/dynacred/Data";
+import Log from "~/lib/cothority/log";
+import {Defaults} from "~/lib/dynacred/Defaults";
 // import {navigatingToHome, switchHome} from "~/pages/home/home-page";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import * as application from "tns-core-modules/application";
@@ -21,7 +20,6 @@ import {msgFailed} from "~/lib/messages";
 // import {AdminViewModel} from "~/pages/settings/settings-view";
 import {ad} from "tns-core-modules/utils/utils";
 import getId = ad.resources.getId;
-import {FileIO} from "~/lib/FileIO";
 
 declare const exit: (code: number) => void;
 
@@ -39,14 +37,6 @@ export async function navigatingTo(args: EventData) {
             return mainViewRegistered(args);
         }
 
-        if (Defaults.LoadTestStore) {
-            let ts = await TestStoreRPC.load(Defaults.Roster);
-            Defaults.ByzCoinID = ts.byzcoinID;
-            Defaults.SpawnerIID = ts.spawnerIID;
-        }
-        if (Defaults.DataFile) {
-            await FileIO.writeFile(Defaults.DataDir + "/data.json", Defaults.DataFile);
-        }
         Log.lvl1("loading");
         await gData.load();
         if (!gData.contact.alias || gData.contact.alias == "") {

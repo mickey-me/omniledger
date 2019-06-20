@@ -1,8 +1,8 @@
 import {EventData, Page, topmost} from "tns-core-modules/ui/frame";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import {fromObject} from "tns-core-modules/data/observable";
 import {sprintf} from "sprintf-js";
-import {gData} from "~/lib/Data";
+import {gData} from "~/lib/dynacred/Data";
 
 let page: Page;
 let rundown = fromObject({});

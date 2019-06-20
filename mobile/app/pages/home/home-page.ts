@@ -5,14 +5,14 @@ logic, and to set up your page’s data binding.
 */
 
 import {EventData, fromObject} from "tns-core-modules/data/observable";
-import {gData} from "~/lib/Data";
+import {gData} from "~/lib/dynacred/Data";
 import {Page} from "tns-core-modules/ui/page";
-import {Log} from "~/lib/Log";
-import {scanNewUser, sendCoins} from "~/lib/ui/users";
+import Log from "~/lib/cothority/log";
+import {scanNewUser, sendCoins} from "~/lib/users";
 import {SelectedIndexChangedEventData} from "tns-core-modules/ui/tab-view";
 import {Label} from "tns-core-modules/ui/label";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
-import {Defaults} from "~/lib/Defaults";
+import {msgFailed, msgOK} from "~/lib/messages";
+import {Defaults} from "~/lib/dynacred/Defaults";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {Frame, topmost} from "tns-core-modules/ui/frame";
 import {frame} from "~/pages/identity/identity-page";

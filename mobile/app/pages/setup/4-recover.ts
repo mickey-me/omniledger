@@ -2,7 +2,7 @@ import {EventData, fromObject} from "tns-core-modules/data/observable";
 import {getFrameById, Page, topmost} from "tns-core-modules/ui/frame";
 import {mainView, mainViewRegister, mainViewRegistered} from "~/main-page";
 import {SetupRecoverView} from "~/pages/setup/4-recover-view";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 
 let page: Page;
 export let setupRecoverView: SetupRecoverView;

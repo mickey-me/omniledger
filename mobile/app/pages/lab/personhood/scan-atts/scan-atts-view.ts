@@ -2,8 +2,8 @@ import {viewScanModel} from "~/pages/lab/personhood/scan-atts/scan-atts-page";
 
 const crypto = require("crypto-browserify");
 import {Observable} from "tns-core-modules/data/observable";
-import {Log} from "~/lib/Log";
-import {gData} from "~/lib/Data";
+import Log from "~/lib/cothority/log";
+import {gData} from "~/lib/dynacred/Data";
 import {Party} from "~/lib/Party";
 import {Public} from "~/lib/KeyPair";
 import * as dialogs from "tns-core-modules/ui/dialogs";

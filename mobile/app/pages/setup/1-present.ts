@@ -7,10 +7,10 @@ logic, and to set up your page’s data binding.
 import {EventData, fromObjectRecursive, Observable} from "tns-core-modules/data/observable";
 import {getFrameById, Page} from "tns-core-modules/ui/frame";
 import * as dialogs from "tns-core-modules/ui/dialogs";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import {TestStore} from "~/lib/network/TestStore";
-import {Defaults} from "~/lib/Defaults";
-import {gData, TestData} from "~/lib/Data";
+import {Defaults} from "~/lib/dynacred/Defaults";
+import {gData, TestData} from "~/lib/dynacred/Data";
 import {Label} from "tns-core-modules/ui/label";
 import {mainView} from "~/main-page";
 import {openUrl} from "tns-core-modules/utils/utils";

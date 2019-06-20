@@ -1,10 +1,10 @@
 import {fromObject} from "tns-core-modules/data/observable";
 import {Page} from "tns-core-modules/ui/page";
-import {Contact} from "~/lib/Contact";
+import {Contact} from "~/lib/dynacred/Contact";
 import {compose, available} from "nativescript-email";
-import {msgFailed} from "~/lib/ui/messages";
+import {msgFailed} from "~/lib/messages";
 import {openUrl} from "tns-core-modules/utils/utils";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import {dial, requestCallPermission} from "nativescript-phone";
 import {topmost} from "tns-core-modules/ui/frame";
 

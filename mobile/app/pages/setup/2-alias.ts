@@ -6,11 +6,11 @@ logic, and to set up your page’s data binding.
 
 import {EventData, fromObject} from "tns-core-modules/data/observable";
 import {getFrameById, Page} from "tns-core-modules/ui/frame";
-import {Log} from "~/lib/Log";
-import {gData} from "~/lib/Data";
+import Log from "~/lib/cothority/log";
+import {gData} from "~/lib/dynacred/Data";
 import * as dialogs from "tns-core-modules/ui/dialogs";
-import {msgFailed} from "~/lib/ui/messages";
-import {Defaults} from "~/lib/Defaults";
+import {msgFailed} from "~/lib/messages";
+import {Defaults} from "~/lib/dynacred/Defaults";
 
 let input = fromObject({
     input: {

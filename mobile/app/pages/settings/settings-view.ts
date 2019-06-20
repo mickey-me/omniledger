@@ -1,13 +1,13 @@
 import {Observable} from "tns-core-modules/data/observable";
-import {Data, gData} from "~/lib/Data";
+import {Data, gData} from "~/lib/dynacred/Data";
 import {ServerIdentity} from "~/lib/network/Roster";
 import {WebSocket} from "~/lib/network/NSNet";
 import {RequestPath} from "~/lib/network/RequestPath";
 import {DecodeType} from "~/lib/network/DecodeType";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import {adminView} from "~/pages/settings/settings-page";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
-import {Defaults} from "~/lib/Defaults";
+import {Defaults} from "~/lib/dynacred/Defaults";
 
 export class AdminViewModel extends Observable {
     nodes:ObservableArray<Node> = new ObservableArray();

@@ -5,14 +5,14 @@ logic, and to set up your page’s data binding.
 */
 
 import {EventData, fromObject} from "tns-core-modules/data/observable";
-import {gData} from "~/lib/Data";
+import {gData} from "~/lib/dynacred/Data";
 import {Page} from "tns-core-modules/ui/page";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {GestureEventData} from "tns-core-modules/ui/gestures";
-import {Contact} from "~/lib/Contact";
+import {Contact} from "~/lib/dynacred/Contact";
 import * as Long from "long";
-import {assertRegistered, scanNewUser} from "~/lib/ui/users";
+import {assertRegistered, scanNewUser} from "~/lib/users";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {ItemEventData} from "tns-core-modules/ui/list-view";
 import {ContactsView} from "~/pages/identity/contacts/contacts-view";

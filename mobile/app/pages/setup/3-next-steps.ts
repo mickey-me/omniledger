@@ -7,12 +7,12 @@ logic, and to set up your page’s data binding.
 import {EventData, fromObject} from "tns-core-modules/data/observable";
 import {getFrameById, Page, topmost} from "tns-core-modules/ui/frame";
 import * as dialogs from "tns-core-modules/ui/dialogs";
-import {gData} from "~/lib/Data";
-import {Log} from "~/lib/Log";
-import {Contact} from "~/lib/Contact";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
+import {gData} from "~/lib/dynacred/Data";
+import Log from "~/lib/cothority/log";
+import {Contact} from "~/lib/dynacred/Contact";
+import {msgFailed, msgOK} from "~/lib/messages";
 import {mainView, mainViewRegister, mainViewRegistered} from "~/main-page";
-import {Defaults} from "~/lib/Defaults";
+import {Defaults} from "~/lib/dynacred/Defaults";
 
 export function navigatingTo(args: EventData) {
     let page = <Page>args.object;

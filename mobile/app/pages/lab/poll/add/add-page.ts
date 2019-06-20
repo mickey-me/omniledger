@@ -1,9 +1,9 @@
 import {EventData, fromObject, fromObjectRecursive, Observable} from "tns-core-modules/data/observable";
 import {Page} from "tns-core-modules/ui/page";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import {topmost} from "tns-core-modules/ui/frame";
-import {gData} from "~/lib/Data";
-import {msgFailed} from "~/lib/ui/messages";
+import {gData} from "~/lib/dynacred/Data";
+import {msgFailed} from "~/lib/messages";
 import {randomBytes} from "crypto-browserify";
 import {InstanceID} from "~/lib/cothority/byzcoin/ClientTransaction";
 

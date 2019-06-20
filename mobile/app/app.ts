@@ -5,7 +5,7 @@ purpose of the file is to pass control to the app’s first module.
 */
 
 import * as application from "tns-core-modules/application";
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 
 application.on("orientationChanged", (evt) => {
     Log.lvl3("Orientation-change:", evt);

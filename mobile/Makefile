@@ -34,3 +34,59 @@ ios-release: apply-patches
 xcode-dev: ios-dev
 	open platforms/ios/personhoodonline.xcworkspace/
 
+cothority_src: dynacred_src cothority-pull app/lib/cothority
+
+app/lib/cothority: cothority/external/js/cothority/src
+	@cp -a $< $@
+	@find app/ -name "*.ts" | xargs perl -pi -e "s:\@dedis/cothority:~/lib/cothority:"
+
+cothority_npm: kyber_npm
+	@echo "Using cothority-npm libraries"
+	@if [ ! -d app/lib/cothority ]; then \
+		echo "there is no cothority-source present"; \
+		exit 0; \
+	fi; \
+	diff -Naurq cothority/external/js/cothority/src/ app/lib/cothority/ || \
+	    ( echo "Moving changes to cothority"; cp -a app/lib/cothority/ cothority/external/js/cothority/src ); \
+	rm -rf app/lib/cothority; \
+	find app/ -name "*.ts" | xargs perl -pi -e "s:~/lib/cothority:\@dedis/cothority:"
+
+cothority:
+	git clone https://github.com/c4dt/cothority
+
+cothority-pull: cothority
+	cd cothority && git pull
+
+kyber_src: cothority_src cothority-pull app/lib/kyber
+
+app/lib/kyber: cothority/external/js/kyber/src
+	@cp -a $< $@
+	@find app/ -name "*.ts" | xargs perl -pi -e "s:\@dedis/kyber:~/lib/kyber:"
+
+kyber_npm:
+	@echo "Using kyber-npm libraries"
+	@if [ ! -d app/lib/kyber ]; then \
+		echo "there is no kyber-source present, aborting"; \
+		exit 0; \
+	fi; \
+	diff -Naurq cothority/external/js/kyber/src/ app/lib/kyber/ || \
+	    ( echo "Moving changes to kyber"; cp -a app/lib/kyber/ cothority/external/js/kyber/src ); \
+	rm -rf app/lib/kyber; \
+	find app/ -name "*.ts" | xargs perl -pi -e "s:~/lib/kyber:\@dedis/kyber:"
+
+dynacred_src: app/lib/dynacred
+
+app/lib/dynacred: ../dynacred/src
+	@cp -a $< $@
+	@find app/ -name "*.ts" | xargs perl -pi -e "s:\@c4dt/dynacred:app/lib/dynacred:"
+
+dynacred_npm: cothority_npm
+	@echo "Using dynacred-npm libraries"
+	@if [ ! -d app/lib/dynacred ]; then \
+		echo "there is no dynacred-source present, aborting"; \
+		exit 0; \
+	fi; \
+	diff -Naurq ../dynacred/src/ app/lib/dynacred/ || \
+	    ( echo "Moving changes to dynacred"; cp -a app/lib/dynacred/ ../dynacred/src ); \
+	rm -rf app/lib/dynacred; \
+	find app/ -name "*.ts" | xargs perl -pi -e "s:~/lib/dynacred:\@c4dt/dynacred:"

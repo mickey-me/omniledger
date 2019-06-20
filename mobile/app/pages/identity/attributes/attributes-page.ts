@@ -6,15 +6,15 @@ logic, and to set up your page’s data binding.
 
 import {EventData} from "tns-core-modules/data/observable";
 import {getFrameById, Page, topmost} from "tns-core-modules/ui/frame";
-import {gData} from "~/lib/Data";
+import {gData} from "~/lib/dynacred/Data";
 import {Identity, AttributesViewModel} from "./attributes-view";
-import {Log} from "~/lib/Log"
+import Log from "~/lib/cothority/log"
 import * as dialogs from "tns-core-modules/ui/dialogs";
-import {Defaults} from "~/lib/Defaults";
+import {Defaults} from "~/lib/dynacred/Defaults";
 import {SelectedIndexChangedEventData} from "tns-core-modules/ui/tab-view";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
+import {msgFailed, msgOK} from "~/lib/messages";
 import {mainView, mainViewRegister} from "~/main-page";
-import {dismissSoftKeyboard} from "~/lib/ui/users";
+import {dismissSoftKeyboard} from "~/lib/users";
 
 let page: Page;
 export let adminView: AttributesViewModel;

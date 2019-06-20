@@ -1,6 +1,6 @@
 import {Observable} from "tns-core-modules/data/observable";
-import {Log} from "~/lib/Log";
-import {gData} from "~/lib/Data";
+import Log from "~/lib/cothority/log";
+import {gData} from "~/lib/dynacred/Data";
 import {Badge} from "~/lib/Badge";
 import {Party} from "~/lib/Party";
 import {GestureEventData} from "tns-core-modules/ui/gestures";
@@ -8,7 +8,7 @@ import {fromFile, ImageSource} from "tns-core-modules/image-source";
 import {elements} from "~/pages/lab/personhood/personhood-page";
 import {Folder, knownFolders, path} from "tns-core-modules/file-system";
 import {sprintf} from "sprintf-js";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
+import {msgFailed, msgOK} from "~/lib/messages";
 import {PopDesc, PopPartyStruct} from "~/lib/cothority/byzcoin/contracts/PopPartyInstance";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {getFrameById, topmost} from "tns-core-modules/ui/frame";

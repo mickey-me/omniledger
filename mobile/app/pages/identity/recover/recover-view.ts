@@ -1,7 +1,7 @@
 import {Observable} from "tns-core-modules/data/observable";
-import {Contact} from "~/lib/Contact";
-import {Log} from "~/lib/Log";
-import {gData} from "~/lib/Data";
+import {Contact} from "~/lib/dynacred/Contact";
+import Log from "~/lib/cothority/log";
+import {gData} from "~/lib/dynacred/Data";
 import {topmost} from "tns-core-modules/ui/frame";
 import {ItemEventData} from "tns-core-modules/ui/list-view";
 import * as dialogs from "tns-core-modules/ui/dialogs";

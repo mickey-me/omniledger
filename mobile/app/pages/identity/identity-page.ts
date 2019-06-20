@@ -1,4 +1,4 @@
-import {Log} from "~/lib/Log";
+import Log from "~/lib/cothority/log";
 import {GestureEventData} from "tns-core-modules/ui/gestures";
 import {Frame, getFrameById, topmost} from "tns-core-modules/ui/frame";
 import {SelectedIndexChangedEventData} from "tns-core-modules/ui/tab-view";

@@ -1,14 +1,14 @@
 import {fromObject, Observable} from "tns-core-modules/data/observable";
-import {Log} from "~/lib/Log";
-import {gData} from "~/lib/Data";
+import Log from "~/lib/cothority/log";
+import {gData} from "~/lib/dynacred/Data";
 import {GestureEventData} from "tns-core-modules/ui/gestures";
-import {msgFailed, msgOK} from "~/lib/ui/messages";
+import {msgFailed, msgOK} from "~/lib/messages";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {getFrameById, topmost} from "tns-core-modules/ui/frame";
 import {elPoll, updatePoll} from "~/pages/lab/poll/poll-page";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {PersonhoodRPC, PollChoice, PollStruct} from "~/lib/PersonhoodRPC";
-import {Defaults} from "~/lib/Defaults";
+import {Defaults} from "~/lib/dynacred/Defaults";
 
 export class PollView extends Observable {
     polls = new ObservableArray();
