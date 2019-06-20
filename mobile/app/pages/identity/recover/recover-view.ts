@@ -21,7 +21,7 @@ export class RecoverView extends Observable {
     async updateTrustees() {
         let trustees: Trustee[] = [];
         gData.contact.recover.trustees.forEach(crediid => {
-            let contacts = gData.friends.filter( c => c.credentialIID.equals(crediid));
+            let contacts = gData.contacts.filter( c => c.credentialIID.equals(crediid));
             if (contacts.length == 1){
                 trustees.push(new Trustee(contacts[0]));
             }

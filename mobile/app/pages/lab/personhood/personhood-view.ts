@@ -1,15 +1,15 @@
 import {Observable} from "tns-core-modules/data/observable";
 import Log from "~/lib/cothority/log";
+import { PopDesc } from "~/lib/cothority/personhood/proto";
 import {gData} from "~/lib/dynacred/Data";
-import {Badge} from "~/lib/Badge";
-import {Party} from "~/lib/Party";
+import {Badge} from "~/lib/dynacred/Badge";
+import {Party} from "~/lib/dynacred/Party";
 import {GestureEventData} from "tns-core-modules/ui/gestures";
 import {fromFile, ImageSource} from "tns-core-modules/image-source";
 import {elements} from "~/pages/lab/personhood/personhood-page";
 import {Folder, knownFolders, path} from "tns-core-modules/file-system";
 import {sprintf} from "sprintf-js";
 import {msgFailed, msgOK} from "~/lib/messages";
-import {PopDesc, PopPartyStruct} from "~/lib/cothority/byzcoin/contracts/PopPartyInstance";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {getFrameById, topmost} from "tns-core-modules/ui/frame";
 import {Label} from "tns-core-modules/ui/label";
@@ -31,7 +31,7 @@ export class PersonhoodView extends Observable {
     }
 
     sortUnique(input: ViewElement[]): ViewElement[] {
-        let c = input.map(i => i).sort((a, b) => a.desc.dateTime.compare(b.desc.dateTime) * -1);
+        let c = input.map(i => i).sort((a, b) => a.desc.datetime.compare(b.desc.datetime) * -1);
         return c.filter((re, i) =>
             c.findIndex(r => r.desc.uniqueName == re.desc.uniqueName) == i);
     }
@@ -49,15 +49,15 @@ export class PersonhoodView extends Observable {
 
     updateBadges() {
         this.badges = gData.badges.map(b => new BadgeView(b))
-            .sort((a, b) => a.desc.dateTime.sub(b.desc.dateTime).toNumber());
+            .sort((a, b) => a.desc.datetime.sub(b.desc.datetime).toNumber());
         this.notifyPropertyChange("elements", this.elements);
     }
 
     async updateParties() {
         await gData.updateParties();
         this.parties = gData.parties.map(p => new PartyView(p))
-            .sort((a, b) => a.party.partyInstance.popPartyStruct.description.dateTime.sub(
-                b.party.partyInstance.popPartyStruct.description.dateTime).toNumber());
+            .sort((a, b) => a.party.partyInstance.popPartyStruct.description.datetime.sub(
+                b.party.partyInstance.popPartyStruct.description.datetime).toNumber());
 
         if (this.parties.length > 0) {
             this.parties[0].setChosen(true);

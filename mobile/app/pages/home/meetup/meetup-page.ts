@@ -4,23 +4,14 @@ a code-behind file. The code-behind is a great place to place your view
 logic, and to set up your page’s data binding.
 */
 
-import {EventData, fromObject} from "tns-core-modules/data/observable";
+import {EventData} from "tns-core-modules/data/observable";
 import {gData} from "~/lib/dynacred/Data";
 import {Page} from "tns-core-modules/ui/page";
 import Log from "~/lib/cothority/log";
-import * as dialogs from "tns-core-modules/ui/dialogs";
-import {GestureEventData} from "tns-core-modules/ui/gestures";
-import {Contact} from "~/lib/dynacred/Contact";
-import * as Long from "long";
-import {assertRegistered, scanNewUser} from "~/lib/users";
-import {ObservableArray} from "tns-core-modules/data/observable-array";
-import {ItemEventData} from "tns-core-modules/ui/list-view";
-import {ContactsView} from "~/pages/identity/contacts/contacts-view";
-import {Label} from "tns-core-modules/ui/label";
-import {Meetup, PersonhoodRPC, UserLocation} from "~/lib/PersonhoodRPC";
+import { Meetup, PersonhoodRPC, UserLocation } from "~/lib/dynacred/personhood-rpc";
+import { SocialNode } from "~/lib/dynacred/SocialNode";
 import {MeetupView} from "~/pages/home/meetup/meetup-view";
 import {topmost} from "tns-core-modules/ui/frame";
-import {SocialNode} from "~/lib/SocialNode";
 import {msgFailed} from "~/lib/messages";
 import Timeout = NodeJS.Timeout;
 

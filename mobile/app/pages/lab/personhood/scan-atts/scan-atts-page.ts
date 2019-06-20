@@ -4,7 +4,7 @@ import {Page} from "tns-core-modules/ui/page";
 import Log from "~/lib/cothority/log";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {gData} from "~/lib/dynacred/Data";
-import {Party} from "~/lib/Party";
+import {Party} from "~/lib/dynacred/Party";
 import {parseQRCode, scan} from "~/lib/dynacred/Scan";
 import {msgFailed, msgOK} from "~/lib/messages";
 import {topmost} from "tns-core-modules/ui/frame";

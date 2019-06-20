@@ -4,7 +4,7 @@ const crypto = require("crypto-browserify");
 import {Observable} from "tns-core-modules/data/observable";
 import Log from "~/lib/cothority/log";
 import {gData} from "~/lib/dynacred/Data";
-import {Party} from "~/lib/Party";
+import {Party} from "~/lib/dynacred/Party";
 import {Public} from "~/lib/KeyPair";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import {topmost} from "tns-core-modules/ui/frame";

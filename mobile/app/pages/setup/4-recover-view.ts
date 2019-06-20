@@ -4,12 +4,8 @@ import Log from "~/lib/cothority/log";
 import {Data, gData} from "~/lib/dynacred/Data";
 import {topmost} from "tns-core-modules/ui/frame";
 import {ItemEventData} from "tns-core-modules/ui/list-view";
-import * as dialogs from "tns-core-modules/ui/dialogs";
-import {setupRecoverView} from "~/pages/setup/4-recover";
 import {createQrcode, parseQRCode, scan} from "~/lib/dynacred/Scan";
 import {msgFailed} from "~/lib/messages";
-import {InstanceID} from "~/lib/cothority/byzcoin/ClientTransaction";
-import {Credential, CredentialInstance} from "~/lib/cothority/byzcoin/contracts/CredentialInstance";
 import {mainViewRegistered} from "~/main-page";
 
 export class SetupRecoverView extends Observable {
@@ -31,7 +27,7 @@ export class SetupRecoverView extends Observable {
     async updateTrustees() {
         let trustees: TrusteeSigner[] = [];
         gData.contact.recover.trustees.forEach(darciid => {
-            let contacts = gData.friends.filter(c => c.darcInstance.iid.equals(darciid));
+            let contacts = gData.contacts.filter(c => c.darcInstance.id.equals(darciid));
             if (contacts.length == 1) {
                 trustees.push(new TrusteeSigner(contacts[0]));
             }

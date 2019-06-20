@@ -23,14 +23,14 @@ let page: Page;
 
 // Event handler for Page "navigatingTo" event attached in identity.xml
 export function navigatingTo(args: EventData) {
-    contacts = new ContactsView(gData.friends);
+    contacts = new ContactsView(gData.contacts);
     page = <Page>args.object;
     page.bindingContext = contacts;
     friendsUpdateList();
 }
 
 export function friendsUpdateList() {
-    contacts.updateUsers(gData.friends);
+    contacts.updateUsers(gData.contacts);
 }
 
 export async function addFriend(args: GestureEventData) {

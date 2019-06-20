@@ -1,16 +1,9 @@
 import {Observable} from "tns-core-modules/data/observable";
 import {Contact} from "~/lib/dynacred/Contact";
-import Log from "~/lib/cothority/log";
 import {gData} from "~/lib/dynacred/Data";
-import {friendsUpdateList, setProgress} from "~/pages/identity/contacts/contacts-page";
 import {topmost} from "tns-core-modules/ui/frame";
 import {ItemEventData} from "tns-core-modules/ui/list-view";
-import * as dialogs from "tns-core-modules/ui/dialogs";
-import * as Long from "long";
-import {assertRegistered, sendCoins} from "~/lib/users";
-import {msgFailed, msgOK} from "~/lib/messages";
-import {CredentialStruct} from "~/lib/cothority/byzcoin/contracts/CredentialInstance";
-import {Meetup, UserLocation} from "~/lib/PersonhoodRPC";
+import { UserLocation } from "~/lib/dynacred/personhood-rpc";
 
 export class MeetupView extends Observable {
     _userViews: UserView[];

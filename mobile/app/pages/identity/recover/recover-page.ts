@@ -39,7 +39,7 @@ export function goBack() {
 
 export async function addTrustee() {
     let contacts: Contact[] = [];
-    gData.friends.forEach(f => {
+    gData.contacts.forEach(f => {
         if (f.isRegistered()) {
             if (gData.recoverySignatures.filter(rs => {
                 rs.credentialIID.equals(f.credentialIID);

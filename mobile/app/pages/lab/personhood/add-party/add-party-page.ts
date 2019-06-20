@@ -5,15 +5,12 @@ import * as dialogs from "tns-core-modules/ui/dialogs";
 import * as Long from "long";
 import {ObservableArray} from "tns-core-modules/data/observable-array";
 import {topmost} from "tns-core-modules/ui/frame";
-import {PopDesc, PopPartyStruct} from "~/lib/cothority/byzcoin/contracts/PopPartyInstance";
+import { PopDesc } from "~/lib/cothority/personhood/proto";
 import {gData} from "~/lib/dynacred/Data";
-import {Party} from "~/lib/Party";
-import {IdentityEd25519} from "~/lib/cothority/darc/IdentityEd25519";
+import {Party} from "~/lib/dynacred/Party";
 import {Defaults} from "~/lib/dynacred/Defaults";
 import {sprintf} from "sprintf-js";
-import {CredentialInstance} from "~/lib/cothority/byzcoin/contracts/CredentialInstance";
 import {msgFailed} from "~/lib/messages";
-import {Contact} from "~/lib/dynacred/Contact";
 import {dismissSoftKeyboard} from "~/lib/users";
 
 let NewParty: PopDesc = undefined;
@@ -125,9 +122,9 @@ export async function addOrg(args: any) {
     let result = await dialogs.action({
         title: "Chose organizer",
         cancelButtonText: "Abort",
-        actions: gData.friends.map(f => f.alias)
+        actions: gData.contacts.map(f => f.alias)
     });
-    let org = gData.friends.find(f => f.alias == result);
+    let org = gData.contacts.find(f => f.alias == result);
     if (org != null) {
         viewModel.get("orgList").push(org);
     }

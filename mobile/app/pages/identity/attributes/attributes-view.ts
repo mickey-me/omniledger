@@ -1,13 +1,5 @@
 import {Observable} from "tns-core-modules/data/observable";
 import {Data, gData} from "~/lib/dynacred/Data";
-import {ServerIdentity} from "~/lib/network/Roster";
-import {WebSocket} from "~/lib/network/NSNet";
-import {RequestPath} from "~/lib/network/RequestPath";
-import {DecodeType} from "~/lib/network/DecodeType";
-import Log from "~/lib/cothority/log";
-import {adminView} from "~/pages/settings/settings-page";
-import {ObservableArray} from "tns-core-modules/data/observable-array";
-import {Image} from "tns-core-modules/ui/image";
 import {ImageSource} from "tns-core-modules/image-source";
 import {topmost} from "tns-core-modules/ui/frame";
 
