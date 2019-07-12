@@ -31,11 +31,9 @@ jobs:
       before_install: cd dynacred && npm ci && npm run build && cd ..
       install:
         - cd dynacred && npm build && cd dist && npm link && cd ../..
-        - cd webapp && npm ci && npm link @c4dt/dynacred && cd ..
+        - cd webapp && npm ci && npm link ../dynacred && cd ..
       before_script: cd webapp && npm run lint
       script:
-        - ls node_modules
-        - ls node_modules/@c4dt
         - ls node_modules/@c4dt/dynacred
         - tree node_modules/@c4dt/dynacred
         - npm run build
