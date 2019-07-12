@@ -14,6 +14,7 @@ export class LoadingComponent implements OnInit {
 
   constructor(private router: Router) {
     this.router.navigateByUrl(Defaults.PathUser);
+      Defaults.RandomNewField;
   }
 
   ngOnInit() {

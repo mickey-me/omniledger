@@ -38,6 +38,8 @@ export const Defaults = {
     TestButtons: false,
     // Testing
     Testing: false,
+
+    RandomNewField: true;
 };
 
 function getConodesURL(): string {
