@@ -39,7 +39,7 @@ export const Defaults = {
     // Testing
     Testing: false,
 
-    RandomNewField: true;
+    RandomNewField: true,
 };
 
 function getConodesURL(): string {
