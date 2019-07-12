@@ -28,7 +28,7 @@ jobs:
     - name: webapp
       language: node_js
       node_js: 10
-      before_install: cd dynacred && npm ci && npm run build && cd dist && npm pack && cd ../..
+      before_install: cd dynacred && npm ci && npm run build && npm pack dist && cd ..
       install:
         - cd webapp && npm ci && npm install ../dynacred/c4dt-dynacred-*.tgz && cd ..
       before_script: cd webapp && npm run lint
