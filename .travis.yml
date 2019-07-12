@@ -29,10 +29,10 @@ jobs:
       language: node_js
       node_js: 10
       before_install: cd dynacred && npm ci && npm run build && cd ..
-      install: cd webapp && npm ci
-      before_script:
-        - npm run lint
-        - d=node_modules/@c4dt/dynacred && rm -r $d && ln -s ../../../dynacred/dist $d
+      install:
+        - cd dynacred && npm link && cd ..
+        - cd webapp && npm ci && cd ..
+      before_script: cd webapp && npm run lint
       script:
         - npm run build
         - npm run test --no-watch
