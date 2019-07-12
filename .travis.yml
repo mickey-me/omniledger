@@ -30,7 +30,7 @@ jobs:
       node_js: 10
       before_install: cd dynacred && npm ci && npm run build && cd ..
       install:
-        - cd dynacred && npm link && cd ..
+        - cd dynacred && npm build && cd dist && npm link && cd ../..
         - cd webapp && npm ci && npm link @c4dt/dynacred && cd ..
       before_script: cd webapp && npm run lint
       script:
